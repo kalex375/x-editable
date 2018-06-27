@@ -7,12 +7,21 @@
 }
 
 .editable-container.editable-inline {
-    display: inline-block; 
+    display: inline-block;
     vertical-align: middle;
     width: auto;
     /* inline-block emulation for IE7*/
-    zoom: 1; 
-    *display: inline;    
+    zoom: 1;
+    *display: inline;
+}
+
+.editable-container.editable-exobar {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    /* inline-block emulation for IE7*/
+    zoom: 1;
+    *display: inline;
 }
 
 .editable-container.ui-widget {

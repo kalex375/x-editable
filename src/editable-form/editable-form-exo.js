@@ -49,10 +49,10 @@ Editableform based on Twitter Bootstrap 3
     
     //buttons
     $.fn.editableform.buttons = 
-      '<button type="submit" class="exo-btn exo-btn-primary exo-btn-sm editable-submit">'+
+      '<button type="submit" class="exo-btn-toolbar editable-submit">'+
         '<i class="glyphicon glyphicon-ok"></i>'+
       '</button>'+
-      '<button type="button" class="exo-btn exo-btn-default exo-btn-sm editable-cancel">'+
+      '<button type="button" class="exo-btn-toolbar editable-cancel">'+
         '<i class="glyphicon glyphicon-remove"></i>'+
       '</button>';         
     
