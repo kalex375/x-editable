@@ -47,7 +47,27 @@ function getFiles() {
                //don't build datetime lib, should be included manually
                //inputs+'datetime/bootstrap-datetimepicker/css/datetimepicker.css'
                 ]
-        }, 
+        },
+        exo: {
+            form: [forms+'editable-form-exo.js'],
+            container: [containers+'editable-popover3.js'],
+            inputs: [
+                inputs+'date/bootstrap-datepicker/js/bootstrap-datepicker.js',
+                inputs+'date/date.js',
+                inputs+'date/datefield.js',
+                inputs+'datetime/datetime.js',
+                inputs+'datetime/datetimefield.js'
+                //don't build datetime lib, should be included manually
+                //inputs+'datetime/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js',
+                //no typeahead in bs3
+                //inputs+'typeahead.js'
+                ],
+            css: [
+                inputs+'date/bootstrap-datepicker/css/datepicker.css'
+               //don't build datetime lib, should be included manually
+               //inputs+'datetime/bootstrap-datetimepicker/css/datetimepicker.css'
+                ]
+        },
         jqueryui: {
             form: [forms+'editable-form-jqueryui.js'],
             container: [containers+'editable-tooltip.js'],
