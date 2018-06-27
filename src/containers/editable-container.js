@@ -16,7 +16,11 @@ Applied as jQuery method.
     
     var Inline = function (element, options) {
         this.init(element, options);
-    };    
+    };
+
+    var Exobar = function (element, options) {
+        this.init(element, options);
+    };
 
     //methods
     Popup.prototype = {
@@ -432,7 +436,7 @@ Applied as jQuery method.
             dataKey = 'editableContainer', 
             data = $this.data(dataKey),
             options = typeof option === 'object' && option,
-            Constructor = (options.mode === 'inline') ? Inline : Popup;             
+            Constructor =  (options.mode === 'exobar')? Exobar : (options.mode === 'inline') ? Inline : Popup;
 
             if (!data) {
                 $this.data(dataKey, (data = new Constructor(this, options)));
@@ -447,6 +451,7 @@ Applied as jQuery method.
     //store constructors
     $.fn.editableContainer.Popup = Popup;
     $.fn.editableContainer.Inline = Inline;
+    $.fn.editableContainer.Exobar = Exobar;
 
     //defaults
     $.fn.editableContainer.defaults = {

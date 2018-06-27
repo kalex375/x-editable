@@ -50,7 +50,7 @@ function getFiles() {
         },
         exo: {
             form: [forms+'editable-form-exo.js'],
-            container: [containers+'editable-popover3.js'],
+            container: [containers+'editable-popover3.js', containers+'editable-exo.js'],
             inputs: [
                 inputs+'date/bootstrap-datepicker/js/bootstrap-datepicker.js',
                 inputs+'date/date.js',
