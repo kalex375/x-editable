@@ -1,0 +1,227 @@
+#exolog-tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;    
+    display: inline-block
+}
+#exolog-tooltip h3, #tooltip div { margin: 0; }
+.exologToolbar-hidden {
+    display:none!important;
+}
+
+.exedit-inline-mce-field {
+    border: 1px dashed #0088cc;
+}
+.exedit-inline-mce-button {
+    margin-top: 5px;
+    padding: 5px;
+}
+.exolog-selectable-block{
+    border: 1px dotted #777;
+    outline: none;
+}
+.exolog-selectable-block-active,
+.exolog-selectable-block:hover{
+    border:1px dotted red;
+}
+/*.file_selector_launcher{
+	display:block;
+	width: 16px;
+	height: 16px;
+	!*background:url(/images/fatcow/16x16/pencil.png) no-repeat;*!
+	
+}*/
+.filehandle_wrapper a.file_selector_btn,
+.ex-toolbar-panel a {
+    position: relative;
+    border: 1px solid transparent;
+    display: inline-block;
+    text-decoration: none;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #333;
+    text-align: center;
+    overflow: visible;
+    -webkit-appearance: none;
+    margin: 4px 0;
+    min-width: 34px;
+}
+
+.filehandle_wrapper a.file_selector_btn:hover,
+.ex-toolbar-panel a:hover {
+    color: #333;
+    background-color: #e3e3e3;
+    border-color: #ccc;
+}
+
+.filehandle_wrapper a.file_selector_btn.file_selector_btn_disabled,
+.ex-toolbar-panel a.disabled {
+	opacity: 0.4;
+	cursor: inherit;
+}
+.filehandle_wrapper a.file_selector_btn .mce-txt,
+.ex-toolbar-panel a .mce-txt{
+	padding-left: 5px;
+}
+
+.filehandle_wrapper-tooltip,
+.ex-toolbar-panel__tooltip {
+    position: absolute;
+    bottom: -25px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.2s;
+    display: none;
+    font-family: 'tinymce', Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+}
+
+
+
+.show-filehandle-tooltip,
+.ex-toolbar-panel__tooltip--show {
+    opacity: 1;
+    display: block;
+}
+
+.filehandle_wrapper-tooltip:after,
+.ex-toolbar-panel-tooltip:after {
+    display: block;
+    position: absolute;
+    content: '';
+    border-left: 5px solid black;
+    border-bottom: 5px solid black;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    transform: rotate(135deg);
+    top: -2px;
+    left: calc(50% - 4px);
+}
+.filehandle_wrapper, .ex-toolbar-panel {
+
+	border: 1px solid #d6d6d6;
+	height: 36px;
+	display: none;
+	background-color: #f0f0f0;
+	box-sizing: content-box;
+    color: #333;
+    cursor: inherit;
+    direction: ltr;
+    float: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+	line-height: normal;
+    margin: 0;
+    max-width: none;
+    outline: 0 none;
+    padding: 0 4px;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    vertical-align: top;
+    white-space: nowrap;}
+
+.mce-ico {
+    position: relative;
+}
+
+.ex-toolbar__common {
+  margin-right: 5px;
+}
+.ExeditDarkBg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.43);
+    z-index: 99999;
+    top: 0;
+    left: 0;
+}
+.ExeditDarkBg .popapAlert .buttonBlock button.discard {
+    margin-left: 20px;
+    background: rgb(140, 35, 0);
+    background-image: url(../../js/exologadmin/images/trash.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 3px;
+    background-size: 25px;
+}
+.ExeditDarkBg .popapAlert .buttonBlock button {
+    border: none;
+    outline: none;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 5px 10px 5px 30px;
+    border-radius: 5px;
+    color: #fff;
+    width: 115px;
+}
+.ExeditDarkBg .popapAlert .buttonBlock button.save {
+    background: rgb(0, 140, 35);
+    background-image: url(../../js/exologadmin/images/accept.svg);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+.ExeditDarkBg .popapAlert .buttonBlock button.cancel {
+    float: right;
+    background: rgb(204, 204, 204);
+    background-image: url(../../js/exologadmin/images/clear-button.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 4px;
+    background-size: 25px;
+}
+.ExeditDarkBg .popapAlert p {
+    font-size: 16px;
+    color: #000;
+}
+.ExeditDarkBg .popapAlert h2 {
+    font-size: 22px;
+    color: #000;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    border-bottom: 1px solid #c6c6c6;
+}
+.ExeditDarkBg .popapAlert {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 40px 50px;
+}
+
+.ee-edit-itm,.exolog-selectable-block.ee-settings-trigger .ee-edit-itm {
+    margin-top: 5px;
+    padding: 3px 5px 3px 25px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAEJQTFRF////rKmndW9stbKxo5+dkYyK9vX1mpaUyMXEo6CeiIOAmpWTfnl24+LikIyKvry62tnYh4KA7ezr0c/Ofnl3dXBtIzhuAQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAAAEgAAABIAEbJaz4AAABxSURBVAjXPc5ZFoAgCAXQlxniQNm0/60mmL6/y3QARhbn1gn4DRR4KiYG5V8cQEWw/0qEI5QaTHJSq0D6LWljov2oorOpXLah4l4xwR9Nt23o0QfIva9ZH/aLbVhyTZv1e3ad83E8W6hWN4U3hXrR0AfYMwROBT35dQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0xMC0wOVQwNzo0NDo1MCswMDowMCsdj9MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMTAtMDlUMDc6NDQ6NTArMDA6MDBaQDdvAAAAAElFTkSuQmCC') 5px 4px no-repeat;
+    background-color: #fff
+}
+
+.exolog-selectable-block.ee-settings-trigger, .editable-click, .ee-addreact {
+    cursor: pointer;
+    color: #0a001f !important;
+    border: 1px solid #358c52 !important;
+    padding: 5px 5px 5px 25px;
+    display: inline-block !important;
+    border-radius: 5px;
+    font-size: 11px !important;
+    outline: none !important;
+    background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAEJQTFRF////rKmndW9stbKxo5+dkYyK9vX1mpaUyMXEo6CeiIOAmpWTfnl24+LikIyKvry62tnYh4KA7ezr0c/Ofnl3dXBtIzhuAQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAAAEgAAABIAEbJaz4AAABxSURBVAjXPc5ZFoAgCAXQlxniQNm0/60mmL6/y3QARhbn1gn4DRR4KiYG5V8cQEWw/0qEI5QaTHJSq0D6LWljov2oorOpXLah4l4xwR9Nt23o0QfIva9ZH/aLbVhyTZv1e3ad83E8W6hWN4U3hXrR0AfYMwROBT35dQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0xMC0wOVQwNzo0NDo1MCswMDowMCsdj9MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMTAtMDlUMDc6NDQ6NTArMDA6MDBaQDdvAAAAAElFTkSuQmCC') no-repeat 5px 4px;
+}
+
+.exolog-selectable-block.ee-settings-trigger p {
+    margin: 0;
+}
