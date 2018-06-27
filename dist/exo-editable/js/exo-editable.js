@@ -907,7 +907,11 @@ Applied as jQuery method.
     
     var Inline = function (element, options) {
         this.init(element, options);
-    };    
+    };
+
+    var Exobar = function (element, options) {
+        this.init(element, options);
+    };
 
     //methods
     Popup.prototype = {
@@ -1323,7 +1327,7 @@ Applied as jQuery method.
             dataKey = 'editableContainer', 
             data = $this.data(dataKey),
             options = typeof option === 'object' && option,
-            Constructor = (options.mode === 'inline') ? Inline : Popup;             
+            Constructor =  (options.mode === 'exobar')? Exobar : (options.mode === 'inline') ? Inline : Popup;
 
             if (!data) {
                 $this.data(dataKey, (data = new Constructor(this, options)));
@@ -1338,6 +1342,7 @@ Applied as jQuery method.
     //store constructors
     $.fn.editableContainer.Popup = Popup;
     $.fn.editableContainer.Inline = Inline;
+    $.fn.editableContainer.Exobar = Exobar;
 
     //defaults
     $.fn.editableContainer.defaults = {
@@ -4752,10 +4757,10 @@ Editableform based on Twitter Bootstrap 3
     
     //buttons
     $.fn.editableform.buttons = 
-      '<button type="submit" class="exo-btn exo-btn-primary exo-btn-sm editable-submit">'+
+      '<button type="submit" class="exo-btn-toolbar editable-submit">'+
         '<i class="glyphicon glyphicon-ok"></i>'+
       '</button>'+
-      '<button type="button" class="exo-btn exo-btn-default exo-btn-sm editable-cancel">'+
+      '<button type="button" class="exo-btn-toolbar editable-cancel">'+
         '<i class="glyphicon glyphicon-remove"></i>'+
       '</button>';         
     
@@ -4992,6 +4997,72 @@ Editableform based on Twitter Bootstrap 3
 
 }(window.jQuery));
 
+/**
+ * Editable Inline
+ * ---------------------
+ */
+(function ($) {
+    "use strict";
+
+    //copy prototype from EditableContainer
+    //extend methods
+    $.extend($.fn.editableContainer.Exobar.prototype, $.fn.editableContainer.Popup.prototype, {
+        containerName: 'editableform',
+        innerCss: '.editable-exobar',
+        containerClass: 'editable-container editable-exobar', //css class applied to container element
+
+        initContainer: function () {
+            //container is <span> element
+            this.$tip = $('<span></span>');
+
+            //convert anim to miliseconds (int)
+            if (!this.options.anim) {
+                this.options.anim = 0;
+            }
+        },
+
+        splitOptions: function () {
+            //all options are passed to form
+            this.containerOptions = {};
+            this.formOptions = this.options;
+        },
+
+        tip: function () {
+            return this.$tip;
+        },
+
+        setPosition: function () {
+        },
+
+        /* show */
+        innerShow: function () {
+            //this.call('show');
+            if ( $(this.options.formContainer).find(this.tip()).length>0) {
+                this.tip().show();
+            } else {
+                $(this.options.formContainer).append(this.tip());
+                this.tip().show();
+            }
+        },
+
+        /* hide */
+        innerHide: function () {
+            this.$tip.hide(this.options.anim, $.proxy(function() {
+                //this.$element.show();
+                this.innerDestroy();
+            }, this));
+        },
+
+        /* destroy */
+
+        innerDestroy: function () {
+            if (this.tip()) {
+                this.tip().empty().remove();
+            }
+        }
+    });
+
+}(window.jQuery));
 /* =========================================================
  * bootstrap-datepicker.js
  * http://www.eyecon.ro/bootstrap-datepicker
